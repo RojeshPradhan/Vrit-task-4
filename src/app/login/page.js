@@ -7,7 +7,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  // Hardcoded credentials for authentication
   const user = {
     username: "admin",
     password: "1234",
@@ -16,11 +15,9 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Check if the entered credentials match the hardcoded user
     if (username === user.username && password === user.password) {
-      // Save user authentication state (using localStorage for simplicity)
       localStorage.setItem("authenticated", "true");
-      router.push("/dashboard"); // Redirect to the protected route
+      router.push("/dashboard");
     } else {
       alert("Invalid username or password");
     }
